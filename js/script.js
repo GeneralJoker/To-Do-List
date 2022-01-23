@@ -16,6 +16,10 @@ $(document).ready(function () {
             $(this).trigger("enterKey");
         }
     });
+  
+    //Removes an item when the "X" is clicked
+    $(document).on('click', '.remove', function () {
+        $(this).parent().remove();
+    });
     
-
 });
