@@ -5,3 +5,11 @@
 ul {
   list-style: none;
 }
+
+.remove {
+  padding: 5px;
+}
+
+.completed {
+  padding: 5px;
+}
