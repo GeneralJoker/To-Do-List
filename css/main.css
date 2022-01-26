@@ -6,6 +6,20 @@ ul {
   list-style: none;
 }
 
+
+
+
+/*
+.text:visited, .text:focus {
+  text-decoration: line-through;
+}
+*/
+
+.text {
+  text-decoration: none;
+  color: black;
+}
+
 .remove {
   padding: 5px;
 }
