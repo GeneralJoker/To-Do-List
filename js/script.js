@@ -1,13 +1,13 @@
 $(document).ready(function () {
     //Click Event
     $('#addButton').click(function () {
-        $('<li class="list-group-item"><span class="remove">X</span>' + $('#input').val() + '</li>').appendTo('#list');
+        $('<li><input type="text" name="tasks" class="text" style="width:auto" value="' + $('#input').val() +'" required readonly/><button class="highPriority">High priority</button><span class="remove">X</span></li>').appendTo('#list');
         $('#input').val(null);
     });
     
     //Key pressed event for the enter key
     $('#input').bind("enterKey", function (e) {
-        $('<li class="list-group-item"><span class="remove">X</span>' + $('#input').val() + '</li>').appendTo('#list');
+        $('<li><input type="text" name="tasks" class="text" style="width:auto" value="' + $('#input').val() +'" required readonly/><button class="highPriority">High priority</button>><span class="remove">X</span></li>').appendTo('#list');
         $('#input').val(null);
     });
 
@@ -21,5 +21,32 @@ $(document).ready(function () {
     $(document).on('click', '.remove', function () {
         $(this).parent().remove();
     });
+  
+    //Strikes through an item when task is clicked
+    $(document).on('click', '.text', function () {
+        $(".text:focus, .text:active").css("text-decoration", "line-through");
+    });
+  
+    $(document).on('click', '.highPriority', function () {
+
+          $(this).css("border-color", "red");
+
+    });
     
+    
+    // Validation for null tasks
+    $(document).ready(function() {
+      $('.input-group input').on('keyup', function() {
+        let empty = false;
+        $('.input-group input').each(function() {
+          empty = $(this).val().length == 0;
+        });
+
+        if (empty)
+          $('#addButton').attr('disabled', 'disabled');
+        else
+          $('#addButton').attr('disabled', false);
+      });
+    }); 
+  
 });

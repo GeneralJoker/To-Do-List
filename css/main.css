@@ -1,0 +1,25 @@
+.text {
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.text {
+  text-decoration: none;
+  color: black;
+}
+
+.highPriority {
+  padding:5px;
+}
+
+
+.remove {
+  padding: 5px;
+}
+
+.completed {
+  padding: 5px;
+}
