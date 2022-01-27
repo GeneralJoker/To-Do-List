@@ -20,6 +20,10 @@ ul {
   color: black;
 }
 
+.text[readonly] {
+    border-color: green;
+}
+
 .remove {
   padding: 5px;
 }

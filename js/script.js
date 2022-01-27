@@ -1,7 +1,7 @@
 $(document).ready(function () {
     //Click Event
     $('#addButton').click(function () {
-        $('<li><input type="text" class="text" style="width:auto" value="' + $('#input').val() +'" readonly' + '/><span class="remove">X</span></li>').appendTo('#list');
+        $('<li><input type="text" name="tasks" class="text" style="width:auto" value="' + $('#input').val() +'" required readonly/><button class="highPriority">High priority</button><button class="lowPriority">Low priority</button><span class="remove">X</span></li>').appendTo('#list');
         $('#input').val(null);
     });
     
@@ -24,29 +24,36 @@ $(document).ready(function () {
   
     //Strikes through an item when task is clicked
     $(document).on('click', '.text', function () {
-        //$(this).parent().remove();
-        // Do something extra for a completed task
-        //$(".text:active").css("text-decoration", "line-through");
         $(".text:focus, .text:active").css("text-decoration", "line-through");
     });
   
-    // Validation for null tasks 
+    $(document).on('click', '.highPriority', function () {
+        $(this).parent.css("border-color", "red");
+    });
+  
+    $(document).on('click', '.lowPriority', function () {
+        $(this).parent.css("border-color", "green");
+    });
+    
+  
+//    $(document).on('click', '.edit', function () {
+//        $(this).parent().remove();
+//    });
+    
+    // Validation for null tasks
     $(document).ready(function() {
-      $('.text').keyup(function() {
+      $('.input-group input').on('keyup', function() {
+        let empty = false;
 
-      var empty = false;
-      $('.text').each(function() {
-          if ($(this).val().length == 0) {
-              empty = true;
-          }
-      });                   
+        $('.input-group input').each(function() {
+          empty = $(this).val().length == 0;
+        });
 
-      if (empty) {
-          $('button').attr('disabled', 'disabled');
-      } else {
-          $('button').removeAttr('disabled');
-      }                
+        if (empty)
+          $('#addButton').attr('disabled', 'disabled');
+        else
+          $('#addButton').attr('disabled', false);
       });
-    });   
+    }); 
   
 });
