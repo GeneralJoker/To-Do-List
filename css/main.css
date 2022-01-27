@@ -6,23 +6,15 @@ ul {
   list-style: none;
 }
 
-
-
-
-/*
-.text:visited, .text:focus {
-  text-decoration: line-through;
-}
-*/
-
 .text {
   text-decoration: none;
   color: black;
 }
 
-.text[readonly] {
-    border-color: green;
+.highPriority {
+  padding:5px;
 }
+
 
 .remove {
   padding: 5px;
