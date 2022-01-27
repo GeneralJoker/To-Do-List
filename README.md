@@ -6,4 +6,4 @@
  2. Extract it
  3. Open index.html
 
-The specifics will be demonstrated in the presentation.
+The specifics will be demonstrated in the presentation :)
