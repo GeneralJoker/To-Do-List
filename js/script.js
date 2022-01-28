@@ -26,10 +26,12 @@ $(document).ready(function () {
     $(document).on('click', '.text', function () {
         $(".text:focus, .text:active").css("text-decoration", "line-through");
     });
-  
+    
+    //High priority new feature: Move to top
     $(document).on('click', '.highPriority', function () {
 
           $(this).css("border-color", "red");
+          $(this).parent().parent().prepend($(this).parent());
 
     });
     
@@ -48,5 +50,7 @@ $(document).ready(function () {
           $('#addButton').attr('disabled', false);
       });
     }); 
+  
+    
   
 });
